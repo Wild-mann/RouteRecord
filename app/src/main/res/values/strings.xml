@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Route Record</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="wild_logo_text_content_description">Wild</string>
+    <string name="delete_route">Odstranění záznamu trasy</string>
+    <string name="question_delete_route">Opravdu chcete záznam této trasy smazat?</string>
+    <string name="yes">Ano</string>
+    <string name="no">Ne</string>
+    <string name="close">Zavřít</string>
+</resources>

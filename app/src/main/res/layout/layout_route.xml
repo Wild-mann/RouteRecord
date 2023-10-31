@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/list_item_design">
+
+
+    <ImageView
+        android:id="@+id/imgActivityType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/image_activity_type_design"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/labelLenght"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/labelDateTime"
+        app:srcCompat="@drawable/icon_bike_48" />
+
+    <TextView
+        android:id="@+id/labelDateTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="28.července 10:21"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgActivityType"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgClockTime"
+        android:layout_width="16sp"
+        android:layout_height="16sp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/labelDuration"
+        app:layout_constraintEnd_toStartOf="@+id/labelDuration"
+        app:layout_constraintTop_toTopOf="@+id/labelDuration"
+        app:srcCompat="@drawable/hourglass_black" />
+
+    <TextView
+        android:id="@+id/labelDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="02:06:38"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelDateTime" />
+
+    <ImageView
+        android:id="@+id/imgRoute"
+        android:layout_width="16sp"
+        android:layout_height="16sp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgClockTime"
+        app:layout_constraintStart_toEndOf="@+id/imgActivityType"
+        app:layout_constraintTop_toTopOf="@+id/imgClockTime"
+        app:srcCompat="@drawable/icon_route_48" />
+
+    <TextView
+        android:id="@+id/labelLenght"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="42.35km"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imgRoute"
+        app:layout_constraintTop_toBottomOf="@+id/labelDateTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

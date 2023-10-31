@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/dateTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="13. Července 2023"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lenghtTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lenghtTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="42.3km"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/durationTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/durationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="02:32"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/averageSpeedTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/averageSpeedTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="16.92 km/h"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/maxSpeedTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/maxSpeedTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="284dp"
+        android:text="46.7 km/h"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/durationTextView"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/lenghtTextView"
+        app:srcCompat="@drawable/route_orange" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/averageSpeedTextView"
+        app:layout_constraintEnd_toStartOf="@+id/durationTextView"
+        app:layout_constraintTop_toBottomOf="@+id/lenghtTextView"
+        app:srcCompat="@drawable/hourglass_orange" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/maxSpeedTextView"
+        app:layout_constraintEnd_toStartOf="@+id/averageSpeedTextView"
+        app:layout_constraintTop_toTopOf="@+id/averageSpeedTextView"
+        app:srcCompat="@drawable/average_speed_orange" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/maxSpeedTextView"
+        app:layout_constraintEnd_toStartOf="@+id/maxSpeedTextView"
+        app:layout_constraintTop_toBottomOf="@+id/averageSpeedTextView"
+        app:srcCompat="@drawable/max_speed_orange" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
