@@ -1,7 +1,5 @@
 package cz.wild.routerecord;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -15,17 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import cz.wild.routerecord.database.DataSource;
 import cz.wild.routerecord.listeners.OnRouteAddedListener;
-import cz.wild.routerecord.listeners.OnRouteUpdateListener;
 import cz.wild.routerecord.objects.Route;
-
-import cz.wild.routerecord.listeners.OnDataLoadedListener;
 
 public class MainActivity extends AppCompatActivity {
     TextView testTextView;
@@ -56,32 +46,35 @@ public class MainActivity extends AppCompatActivity {
         });
 
         showRecFragment();
-/**-----------------------------------Testovací data------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //recordTestData();
+    }
+
+    /**
+     * Nahraje testovací data do databáze
+     */
+    private void recordTestData() {
         getDataSource();
+
         Route[] routes = new Route[10];
-        routes[0] = new Route(-1, "1.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[1] = new Route(-1, "2.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[2] = new Route(-1, "3.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[3] = new Route(-1, "4.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[4] = new Route(-1, "5.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[5] = new Route(-1, "6.července 2021", 42.43, 20638, 18.2, 52.1);
-        routes[6] = new Route(-1, "7.července 2020", 42.43, 20638, 18.2, 52.1);
-        routes[7] = new Route(-1, "8.července 2020", 42.43, 20638, 18.2, 52.1);
-        routes[8] = new Route(-1, "9.července 2020", 42.43, 20638, 18.2, 52.1);
-        routes[9] = new Route(-1, "10.července 2020", 42.43, 20638, 18.2, 52.1);
-        //testTextView.setText(route.getDateTime() + " , " + route.getLenght() + " , " + route.getDuration() + " , " + route.getAverageSpeed() + " , " + route.getMaxSpeed());
-        //updateData();
-        //Route newRoute = items.get(0);
-        //testTextView.setText("ID: " + newRoute.getId() + "DATE_TIME " + newRoute.getDateTime() + " , " + newRoute.getLenght() + " , " + newRoute.getDuration() + " , " + newRoute.getAverageSpeed() + " , " + newRoute.getMaxSpeed());
-        for(int i=0; i<10; i++) {
+        routes[0] = new Route(-1, 1682872175, 19.1, 1682872175 - 4443, 18.2, 52.1);
+        routes[1] = new Route(-1, 1682939660, 18.9, 1682939660 - 4362, 18.2, 52.1);
+        routes[2] = new Route(-1, 1683302894, 18.5, 1683302894 - 4127, 18.2, 52.1);
+        routes[3] = new Route(-1, 1683455619, 18.2, 1683455619 - 4029, 18.2, 52.1);
+        routes[4] = new Route(-1, 1683540128, 21.5, 1683540128 - 5943, 18.2, 52.1);
+        routes[5] = new Route(-1, 1683735809, 5.81, 1683735809 - 4649, 18.2, 52.1);
+        routes[6] = new Route(-1, 1683964867, 24.3, 1683964867 - 6274, 18.2, 52.1);
+        routes[7] = new Route(-1, 1684580223, 30.6, 1684580223 - 5926, 18.2, 52.1);
+        routes[8] = new Route(-1, 1684665484, 23.2, 1684665484 - 4796, 18.2, 52.1);
+        routes[9] = new Route(-1, 1685265199, 32.9, 1685265199 - 4954, 18.2, 52.1);
+
+        for (int i = 0; i < 10; i++) {
             dataSource.addRoute(routes[i], new OnRouteAddedListener() {
                 @Override
                 public void onRouteAdded(long newId) {
                     //updateData();
                 }
             });
-        }   */
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        }
     }
 
     @Override
@@ -134,9 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Zobrazí detail trasy
-     * @param route
+     * @param id
      */
-    public void showRouteDetail(Route route) {
+    public void showRouteDetail(int id) {
         toListfragmentButton.setVisibility(View.GONE);
         toRecFragmentButton.setVisibility(View.GONE);
         RouteDetailFragment routeDetailFragment = (RouteDetailFragment)fragmentManager.findFragmentByTag(RouteDetailFragment.class.getName());

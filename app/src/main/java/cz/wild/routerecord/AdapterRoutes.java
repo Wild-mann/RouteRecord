@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import cz.wild.routerecord.helper.DateTimeHelper;
 import cz.wild.routerecord.listeners.OnRouteDeletedListener;
 import cz.wild.routerecord.objects.Route;
 
@@ -27,6 +28,7 @@ public class AdapterRoutes extends RecyclerView.Adapter<AdapterRoutes.MyViewHold
      * Třída slouží k obalení Java reprezentací komponent XML návrhu položek seznamu.
      * Deklarujeme zde pouze ty komponenty položky, se kterými budeme v kódu adaptéru pracovat.
      */
+
     static class MyViewHolder extends RecyclerView.ViewHolder{
         ConstraintLayout root;      // Hlavní layout položky
         ImageView imgActivityType;  // ImageView pro zobrazení ikony typu aktivity
@@ -82,7 +84,7 @@ public class AdapterRoutes extends RecyclerView.Adapter<AdapterRoutes.MyViewHold
         holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activity.showRouteDetail(route);
+                activity.showRouteDetail(route.getId());
             }
         });
 
@@ -96,10 +98,10 @@ public class AdapterRoutes extends RecyclerView.Adapter<AdapterRoutes.MyViewHold
             }
         });
 
-        setIconActivityType(route, holder.root);                            // Nastavení ikony typu aktivity
-        holder.labelDateTime.setText(route.getDateTimeBegin());                  // Nastavení obsahu textView data a času
-        holder.labelDuration.setText(String.valueOf(route.getDuration()));  // Nastavení obsahu textView celkového času
-        holder.labelLenght.setText(String.valueOf(route.getLenght()));      // Nastavení obsahu textView vzdálenosti
+        setIconActivityType(route, holder.root);                                                                                // Nastavení ikony typu aktivity
+        holder.labelDateTime.setText(DateTimeHelper.timestampToStringDate(route.getDateTimeBegin()));                           // Nastavení obsahu textView datumu začátku
+        holder.labelDuration.setText(DateTimeHelper.secondToStringTime(route.getDateTimeBegin() - route.getDateTimeEnd()));     // Nastavení obsahu textView celkového času
+        holder.labelLenght.setText(route.getLenght() + " km");                                                                  // Nastavení obsahu textView vzdálenosti
     }
 
     /**

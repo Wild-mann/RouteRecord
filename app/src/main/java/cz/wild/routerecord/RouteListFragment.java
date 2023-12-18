@@ -23,7 +23,6 @@ public class RouteListFragment extends Fragment {
     RecyclerView recyclerView;
 
     MainActivity mainActivity;
-    DataSource dataSource;
     AdapterRoutes adapter;
     ArrayList<Route> items = new ArrayList<>();
 

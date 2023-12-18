@@ -14,7 +14,7 @@ import cz.wild.routerecord.listeners.OnRouteDeletedListener;
 import cz.wild.routerecord.objects.Route;
 
 /**
- * Třída slouží k práci s databází
+ * Třída s metodami pro přístup k datům databáze
  */
 public class DataSource {
     SQLiteDatabase database;	    // reference na databázi
@@ -72,7 +72,7 @@ public class DataSource {
         ContentValues values = new ContentValues();
         values.put(DbHelper.COLUMN_DATE_TIME_BEGIN, route.getDateTimeBegin());
         values.put(DbHelper.COLUMN_LENGHT, route.getLenght());
-        values.put(DbHelper.COLUMN_DATE_TIME_END, route.getDuration());
+        values.put(DbHelper.COLUMN_DATE_TIME_END, route.getDateTimeEnd());
         values.put(DbHelper.COLUMN_AVERAGE_SPEED, route.getAverageSpeed());
         values.put(DbHelper.COLUMN_MAX_SPEED, route.getMaxSpeed());
 
@@ -89,9 +89,9 @@ public class DataSource {
     private Route cursorToNote(Cursor cursor) {
         return new Route(
                 cursor.getInt(0),
-                cursor.getString(1),
+                cursor.getLong(1),
                 cursor.getDouble(2),
-                cursor.getDouble(3),
+                cursor.getLong(3),
                 cursor.getDouble(4),
                 cursor.getDouble(5));
     }
@@ -111,7 +111,6 @@ public class DataSource {
 
         String tempOffsetString = null;
         if (offset >= 0) tempOffsetString = "" + offset + ", " + limit;
-
         cursor = database.query(
                 DbHelper.TABLE_ROUTE,
                 null,

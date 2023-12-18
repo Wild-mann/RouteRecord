@@ -5,19 +5,19 @@ package cz.wild.routerecord.objects;
  */
 public class Route {
     private int id;                 // id trasy
-    private String dateTimeBegin;   // datum a čas
+    private long dateTimeBegin;     // datum a čas začátku
     private double lenght;          // délka trasy
-    private double duration;        // celkový čas
+    private long dateTimeEnd;     // celkový čas
     private double averageSpeed;    // průměrná rychlost
     private double maxSpeed;        // maximální rychlost
 
     public Route(){}
 
-    public Route(int id, String dateTimeBegin, double lenght, double duration, double averageSpeed, double maxSpeed) {
+    public Route(int id, long dateTimeBegin, double lenght, long dateTimeEnd, double averageSpeed, double maxSpeed) {
         this.id = id;
         this.dateTimeBegin = dateTimeBegin;
         this.lenght = lenght;
-        this.duration = duration;
+        this.dateTimeEnd = dateTimeEnd;
         this.averageSpeed = averageSpeed;
         this.maxSpeed = maxSpeed;
     }
@@ -30,11 +30,11 @@ public class Route {
         this.id = id;
     }
 
-    public String getDateTimeBegin() {
+    public long getDateTimeBegin() {
         return dateTimeBegin;
     }
 
-    public void setDateTimeBegin(String dateTimeBegin) {
+    public void setDateTimeBegin(long dateTimeBegin) {
         this.dateTimeBegin = dateTimeBegin;
     }
 
@@ -46,12 +46,12 @@ public class Route {
         this.lenght = lenght;
     }
 
-    public double getDuration() {
-        return duration;
+    public long getDateTimeEnd() {
+        return dateTimeEnd;
     }
 
-    public void setDuration(long duration) {
-        this.duration = duration;
+    public void setDateTimeEnd(long dateTimeEnd) {
+        this.dateTimeEnd = dateTimeEnd;
     }
 
     public double getAverageSpeed() {

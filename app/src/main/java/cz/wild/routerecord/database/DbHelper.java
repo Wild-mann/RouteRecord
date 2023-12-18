@@ -31,9 +31,9 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String TABLE_ROUTE_CREATE = "CREATE TABLE "
             + TABLE_ROUTE
             + " ( " + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_DATE_TIME_BEGIN + " DATETIME, "
+            + COLUMN_DATE_TIME_BEGIN + " BIGINT, "
             + COLUMN_LENGHT + " DOUBLE, "
-            + COLUMN_DATE_TIME_END + " DATETIME, "
+            + COLUMN_DATE_TIME_END + " BIGINT, "
             + COLUMN_AVERAGE_SPEED + " DOUBLE, "
             + COLUMN_MAX_SPEED + " DOUBLE "
             + ");";

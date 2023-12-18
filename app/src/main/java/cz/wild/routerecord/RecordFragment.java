@@ -63,7 +63,7 @@ public class RecordFragment extends Fragment {
      * A tyto data si z toho parametru uložíme do promněnné items.
      */
     private void updateData() {
-        this.mainActivity.getDataSource().getRoutes(0, 3, new OnDataLoadedListener() {
+        this.mainActivity.getDataSource().getRoutes(0, 2, new OnDataLoadedListener() {
             @Override
             public void onDataLoaded(List<Route> loadedItems) {
                 items = new ArrayList<>(loadedItems);
